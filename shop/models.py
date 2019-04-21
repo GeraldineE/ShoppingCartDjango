@@ -37,6 +37,9 @@ class Product(models.Model):
         ordering = ('name',)
         verbose_name = 'product'
         verbose_name_plural = 'product'
+#Ese ProdCatDetail es del name colocado en url
+def get_utl(self):
+    return reverse('shop:ProdCatDetail', args=[self.category.slug,self.slug])
 
     def __str__(self):
         return '{}'.format(self.name)
